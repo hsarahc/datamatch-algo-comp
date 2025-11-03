@@ -225,6 +225,7 @@ void make_matches(const int target,
             }
         }
     return;
+    }
 }
 
 // ================================================
