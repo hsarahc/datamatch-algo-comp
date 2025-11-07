@@ -46,3 +46,49 @@ You can see how we're testing you in two ways:
 1. Read `__init__.py`. This is the `check50` file we use to check your work.
 2. Read any file inside the `tests/` folder. This is what `check50` will run to
 compare your outputs against a known set of answers.
+
+## Troubleshooting
+
+If you're using Windows, you'll likely encounter issues like from the above
+command. Read the section `Windows Users` and come back. If you're not, using
+Windows, continue to `Linux/MacOS Users`
+
+### Windows Users
+
+You'll probably want to install Windows Subsystem for Linux (WSL). Run:
+```powershell
+wsl --install
+```
+and then answer the questions that pop up. Enter in a username and password of
+your choice, but just make sure you remember it.
+Wait until it finishes installing, and once you see something like:
+```bash
+ivan@IG:/mnt/c/Users/ivang/Documents/github/datamatch-algo-comp/$
+```
+then you're on the right track! You can run:
+```bash
+exit
+```
+to exit WSL. Now type
+```powershell
+wsl
+```
+to enter WSL again.
+
+Now, continue to the section `Linux/MacOS Users`.
+
+### Linux/MacOS Users
+
+Run:
+```
+sudo apt update
+sudo apt install -y python3 python3-pip
+sudo apt install -y build-essential
+```
+Now verify the commands exist:
+```
+python3 --version
+pip3 --version
+gcc --version
+make --version
+```

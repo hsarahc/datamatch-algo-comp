@@ -1,0 +1,9 @@
+check50:
+  files: &check50_files
+    - !exclude "*"
+    - !require "scoring.cc"
+    - !include "scoring.hpp"
+    - !include "user.hpp"
+    - !include "Makefile"
+    - !include "tests/*"
+    - !include "answers.o"
