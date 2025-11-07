@@ -38,4 +38,10 @@ struct User {
     int seriousness = 0; // 0..3 scale
 
     std::vector<int> answers;
+
+    std::unordered_set<std::string> interests;
+
+    enum class HumorType { DRY, SLAPSTICK, DARK, NONE };
+    HumorType humor = HumorType::NONE;
+
 };

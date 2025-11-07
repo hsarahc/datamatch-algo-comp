@@ -111,16 +111,51 @@ bool is_cheating(const User& u1, const User& u2, std::size_t nquestions,
 ///     criteria specified in the README.
 
 bool check_compatibility(const User& u1, const User& u2) {
-    // TODO
-    return false;
+    if (u1.id == u2.id) return false;
+
+    if (u1.college != u2.college) return false;
+
+    if (get_crush_type(u1, u2) == Crush::MUTUAL) return true;
+
+    MatchType type = get_match_type(u1, u2);
+    if (type == MatchType::NEITHER) return false;
+
+    if (std::abs(u1.year - u2.year) > YEAR_DIFF_MAX) return false;
+
+    if (u1.min_compatible_age && u2.age < *u1.min_compatible_age) return false;
+    if (u1.max_compatible_age && u2.age > *u1.max_compatible_age) return false;
+    if (u2.min_compatible_age && u1.age < *u2.min_compatible_age) return false;
+    if (u2.max_compatible_age && u1.age > *u2.max_compatible_age) return false;
+
+    if (u1.no_house_matches && u1.house == u2.house) return false;
+    if (u2.no_house_matches && u1.house == u2.house) return false;
+
+    if (std::find(u1.blocked_houses.begin(), u1.blocked_houses.end(), u2.house)
+        != u1.blocked_houses.end()) return false;
+    if (std::find(u2.blocked_houses.begin(), u2.blocked_houses.end(), u1.house)
+        != u2.blocked_houses.end()) return false;
+
+    return true;
 }
 
 /// bonus(u1, u2):
 ///    Implement this according to the README instructions.
 
 float bonus(const User& u1, const User& u2) {
-    // TODO
-    return 0.0f;
+    float score = 0.0f;
+
+    Crush crush_status = get_crush_type(u1, u2);
+    if (crush_status == Crush::ONE_WAY) score += 0.75f;
+    if (crush_status == Crush::MUTUAL) score += 1.5f;
+
+    score += 0.1f * (u1.seriousness + u2.seriousness);
+
+    for (const auto& interest : u1.interests)
+    if (u2.interests.count(interest)) score += 0.1f;
+
+    if (u1.humor != HumorType::NONE && u1.humor == u2.humor) score += 0.2f;
+
+    return score;
 }
 
 /// ================================
