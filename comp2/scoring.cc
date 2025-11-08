@@ -153,8 +153,8 @@ float bonus(const User& u1, const User& u2) {
     for (const auto& interest : u1.interests)
     if (u2.interests.count(interest)) score += 0.1f;
 
-    if (u1.humor != HumorType::NONE && u1.humor == u2.humor) score += 0.2f;
-
+    if (u1.humor != User::HumorType::NONE && u1.humor == u2.humor) score += 0.2f;
+    
     return score;
 }
 
