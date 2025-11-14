@@ -363,6 +363,20 @@ int main(int argc, char** argv) {
 
         /// TODO: Make noDormMatch logic here. You can make helper functions if
         /// you want.
+        logger.log(INFO, "Applying noDormMatch constraints");
+        for (size_t i = 0; i < tucount; ++i) {
+            for (size_t j = i + 1; j < tucount; ++j) {
+                if ((users[i].no_house_matches || users[j].no_house_matches) &&
+                    users[i].house == users[j].house &&
+                    !users[i].house.empty() && !users[j].house.empty()) {
+            
+                    weights[i][j] = -1.f;
+                    weights[j][i] = -1.f;
+                    matchtypes[i][j] = -1;
+                    matchtypes[j][i] = -1;
+                }
+            }
+        }   
 
         logger.log(INFO, "Computing scores");
         std::unordered_map<std::string, std::string> cross_schools; // empty
