@@ -1,0 +1,104 @@
+{
+  "privateProfile": {
+    "u1": {
+      "email": "alice@harvard.edu",
+      "gender": {
+        "genderValue": "woman"
+      },
+      "description": "CS, coffee, climbing.",
+      "noDormMatch": true,
+      "lookingForGender": {
+        "love": "men",
+        "friendship": "people of all genders"
+      }
+    },
+    "u2": {
+      "email": "bob@harvard.edu",
+      "gender": {
+        "genderValue": "man"
+      },
+      "description": "Math and music.",
+      "noDormMatch": false,
+      "lookingForGender": {
+        "love": "women",
+        "friendship": "people of all genders"
+      }
+    },
+    "u3": {
+      "email": "chris@harvard.edu",
+      "gender": {
+        "genderValue": "man"
+      },
+      "description": "Running, chess.",
+      "noDormMatch": false,
+      "lookingForGender": {
+        "love": "women",
+        "friendship": "people of all genders"
+      }
+    },
+    "u4": {
+      "email": "diana@harvard.edu",
+      "gender": {
+        "genderValue": "woman"
+      },
+      "description": "Art, literature.",
+      "noDormMatch": false,
+      "lookingForGender": {
+        "love": "men",
+        "friendship": "people of all genders"
+      }
+    }
+  },
+  "publicProfile": {
+    "u1": {
+      "college": "Harvard",
+      "year": "2026",
+      "dorm": "Adams"
+    },
+    "u2": {
+      "college": "Harvard",
+      "year": "2026",
+      "dorm": "Adams"
+    },
+    "u3": {
+      "college": "Harvard",
+      "year": "2027",
+      "dorm": "Lowell"
+    },
+    "u4": {
+      "college": "Harvard",
+      "year": "2025",
+      "dorm": "Mather"
+    }
+  },
+  "responses": {
+    "u1": [
+      2,
+      1,
+      3,
+      0,
+      2
+    ],
+    "u2": [
+      2,
+      1,
+      3,
+      0,
+      2
+    ],
+    "u3": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "u4": [
+      3,
+      3,
+      2,
+      2,
+      0
+    ]
+  }
+}

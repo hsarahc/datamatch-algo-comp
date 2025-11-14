@@ -9,3 +9,4 @@ answers.*
 !answers.o
 __pycache__/
 .vscode/*
+comp3/results/*

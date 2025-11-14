@@ -1,0 +1,3 @@
+check50:
+  files: &check50_files
+    - !include "."
