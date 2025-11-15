@@ -11,8 +11,8 @@
 
 struct College {
     std::string name;
-    float*** cosine_sims;
-    float** answer_dist;
+    std::vector<std::vector<std::vector<float>>> cosine_sims;
+    std::vector<std::vector<float>> answer_dist;
     float exp_sim = 0.0;
     float dist_min = std::numeric_limits<float>::max();
 };
